@@ -100,7 +100,7 @@ GuiController.prototype.init = function () {
     }.bind(this));
 
     // OtherMovies List Doppeklick
-    $('#otherMoviesList').dblclick(function () {
+    $('#otherMoviesList').click(function () {
         var entry = $('#otherMoviesList').val();
         console.log("you clicked da otherMoviesList!"
                 + entry);
