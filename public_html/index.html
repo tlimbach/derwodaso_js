@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="3rdparty\jquery-3.4.1.js" type='text/javascript'></script>
+        <script src="movie.js" type='text/javascript'></script>
+        <script src="actor.js" type='text/javascript'></script>
+        <script src="character.js" type='text/javascript'></script>
+        <script src="controller.js" type='text/javascript'></script>
+        <script src="guicontroller.js" type='text/javascript'></script>
+        <script src="finder.js" type='text/javascript'></script>
+        <script src="httpcon.js" type='text/javascript'></script>
+        <script src="linkfinder.js" type='text/javascript'></script>
+        <script src="duckduckgocon.js" type='text/javascript'></script>
+    </head>
+    <body>
+
+        <div class="grid-container">
+            <div id="mp">
+                <fieldset>
+                    <legend>Filmplakat</legend>
+                    <div id="poster"></div>
+                </fieldset>
+            </div>
+            <div id="sp">
+                <fieldset>
+                    <legend>Suche</legend>
+                    <div>
+                        <fieldset>
+                            <legend>Film</legend>
+                            <input id="lstMovie" list="movies" name="moviesearch" />
+                            <datalist id="movies">
+                            </datalist>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend>Schauspieler</legend>
+                            <input id="lstActor" list="actors" name="actorsearch" />
+                            <datalist id="actors">
+                            </datalist>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend>Rolle</legend>
+                            <input id="lstCharacter" list="characters" name="actorsearch"
+                                   size=10 />
+                            <datalist id="characters">
+                            </datalist>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend>Links</legend>
+                            <div id="links">
+                                <div id="linkMovie"></div>
+                                <div id="linkWikiMovie"></div>
+                                <div id="linkWikiActor"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="ap">
+                <fieldset>
+                    <legend id="lgActor">Schauspieler</legend>
+                    <div id="actorposter"></div>
+                </fieldset>
+            </div>
+            <div id="ml">
+                <fieldset>
+                    <legend id="lgOtherMovies">Weitere Filme</legend>
+                    <select id="otherMoviesList" size=5></select> 
+                    <input id="filter" name="filter" type="text">
+                </fieldset>
+            </div>
+            <div id="pc">
+                <fieldset>
+                    <legend>Alle Darsteller</legend>
+                    <div id="pictures"></div>
+                </fieldset>
+            </div>
+            <div id = "legalDDG">duckduckgo</div>
+            <div id = "legalTMDB">theMovieDatabase</div>
+        </div>
+    </body>
+</html>
+
