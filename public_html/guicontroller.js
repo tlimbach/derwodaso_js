@@ -11,6 +11,7 @@ function GuiController(apiKey) {
     this.movies = [];
     this.actors = [];
     this.characters = [];
+    this.oldMovies = [];
     thatGuiController = this;
 }
 
@@ -140,17 +141,28 @@ GuiController.prototype.updateGuiForSelectededActornamne = function (actorName) 
 
 GuiController.prototype.setMovies = function (movies) {
     this.movies = movies;
-    console.log("GuiController received movies " + movies.length);
+
+    for (var t = 0; t < this.oldMovies.length; t++) {
+
+        var oldMovie = this.oldMovies[t];
+
+        if (typeof (oldMovie) !== "undefined") {
+            console.log("pushing old movie " + oldMovie.getTitle());
+            this.movies.push(this.oldMovies[t]);
+        }
+    }
+
+    console.log("GuiController received movies " + this.movies.length);
     $("#movies").empty();
-    for (var t = 0; t < movies.length; t++) {
-        var movie = movies[t];
+    for (var t = 0; t < this.movies.length; t++) {
+        var movie = this.movies[t];
         $("<option/>").text(movie.getTitle())
                 .appendTo("#movies");
 
     }
 
-    if (movies.length > 0) {
-        this.loadMovieThings(movies[0]);
+    if (this.movies.length > 0) {
+        this.loadMovieThings(this.movies[0]);
     } else {
         alert("Es wurden keine Filme gefunden.");
     }
@@ -328,6 +340,9 @@ GuiController.prototype.populateOtherMoviesWithFilter = function (filter) {
 
 GuiController.prototype.loadMovieThings = function (movie) {
     if (typeof (movie) !== "undefined") {
+        
+        this.oldMovies.push(movie);
+        
         this.finder.loadCharacters(movie);
 
         $('#poster').empty();
