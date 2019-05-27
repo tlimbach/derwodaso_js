@@ -286,7 +286,21 @@ GuiController.prototype.populateOtherMoviesWithFilter = function (filter) {
 
         var text = movie.getTitle();
 
-        if (filter === null || this.otherMovies[t].getTitle().toLowerCase().includes(filter.toLowerCase())) {
+        var accept = filter == null;
+
+        if (!accept) {
+            accept = this.otherMovies[t].getTitle().toLowerCase().includes(filter.toLowerCase());
+        }
+
+        if (!accept) {
+
+            var character = this.otherMovies[t].getCharacter();
+            if (typeof (character) !== "undefined" && character.toLowerCase().includes(filter.toLowerCase())) {
+                accept = true;
+            }
+        }
+
+        if (accept) {
 
             var character = movie.getCharacter();
             if (typeof (character) !== "undefined" && character.length > 0) {
