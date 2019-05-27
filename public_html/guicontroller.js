@@ -87,6 +87,15 @@ GuiController.prototype.init = function () {
 
     }.bind(this));
 
+    $("#filter").keyup(function () {
+
+        console.log("otherMOviesFilterfilter")
+
+        var ft = $("#filter").val();
+        console.log("change " + ft);
+        this.populateOtherMoviesWithFilter(ft);
+
+    }.bind(this));
 
     //  Rolle auswählen
     $("#lstCharacter").on("change", function () {
@@ -98,24 +107,6 @@ GuiController.prototype.init = function () {
         var actor = character.getActor();
         this.updateGuiForSelectedActor(actor);
     }.bind(this));
-
-    // OtherMovies List Doppeklick
-    $('#otherMoviesList').click(function () {
-        var entry = $('#otherMoviesList').val();
-        console.log("you clicked da otherMoviesList!"
-                + entry);
-
-        var movieName = entry;
-        var idxKlammerAuf = entry.indexOf(" (");
-        if (idxKlammerAuf > -1) {
-            movieName = entry.substring(0, idxKlammerAuf);
-        }
-
-        console.log("movie name >" + movieName + "<");
-        this.finder.findMovies(movieName);
-
-    }.bind(this));
-
 
     $("#lstMovie").click(function () {
         $("#lstMovie").val(null);
@@ -265,8 +256,8 @@ GuiController.prototype.setActorPoster = function (actor) {
 
 GuiController.prototype.setOtherMoviesForActor = function (actor, movies) {
     console.log("setOtherMoviesForActor " + movies.length);
-    console.log("fioejfiojeifoje" + actor.getName());
-    $("#lgOtherMovies").html("Weitere Filme mit " + actor.getName());
+    console.log("actorname" + actor.getName());
+    $("#lgOtherMovies").html("Filme mit " + actor.getName());
     movies.sort(function (m1, m2) {
 
         var title1 = m1.getTitle();
@@ -283,19 +274,43 @@ GuiController.prototype.setOtherMoviesForActor = function (actor, movies) {
         return 0;
     });
     $("#otherMoviesList").empty();
-    for (var t = 0; t < movies.length; t++) {
-        var movie = movies[t];
+    $("#filter").empty();
+    this.otherMovies = movies;
+    this.populateOtherMoviesWithFilter(null);
+};
+
+GuiController.prototype.populateOtherMoviesWithFilter = function (filter) {
+    $("#otherMoviesList").empty();
+    for (var t = 0; t < this.otherMovies.length; t++) {
+        var movie = this.otherMovies[t];
 
         var text = movie.getTitle();
-        var character = movie.getCharacter();
-        if (typeof (character) !== "undefined" && character.length > 0) {
-            text += " (" + character + ")";
-        }
 
-        $("<option/>").text(text)
-                .appendTo("#otherMoviesList");
+        if (filter === null || this.otherMovies[t].getTitle().toLowerCase().includes(filter.toLowerCase())) {
+
+            var character = movie.getCharacter();
+            if (typeof (character) !== "undefined" && character.length > 0) {
+                text += " (" + character + ")";
+            }
+
+            var d = document.createElement('li');
+            $(d).html(text)
+                    .appendTo($("#otherMoviesList")).click(function (e) {
+                var movieName = e.target.innerHTML;
+
+                var idxKlammerAuf = movieName.indexOf(" (");
+                if (idxKlammerAuf > -1) {
+                    movieName = movieName.substring(0, idxKlammerAuf);
+                }
+
+                console.log("movie name >" + movieName + "<");
+                this.finder.findMovies(movieName);
+
+            }.bind(this));
+        }
     }
-};
+
+}
 
 GuiController.prototype.loadMovieThings = function (movie) {
     if (typeof (movie) !== "undefined") {
