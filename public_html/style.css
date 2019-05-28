@@ -29,7 +29,7 @@ body {
 }
 
 #ap img, #mp img {
-    height: 350px;
+    height: 340px;
     /*max-height: 300px;*/
 }   
 
@@ -106,15 +106,6 @@ select {
     width: 99%;
 }
 
-#pictures>div {
-    /*    width: 240px;*/
-    margin-left: 10px;
-    margin-top:0px;
-    margin-bottom: 0px;
-    text-align: center;
-    line-height: 30px;
-}
-
 .pci {
     max-height:250px;
 }
@@ -161,8 +152,8 @@ select {
 
 #otherMoviesList {
     width: 100%;
-    max-height:310px;
-    height:310px;
+    max-height:300px;
+    height:300px;
     overflow-y:scroll;
     text-align: left;
     margin:0;
@@ -176,6 +167,16 @@ select {
     overflow-y: auto;
     max-width: 950px;
 }
+
+#pictures>div {
+    /*    width: 240px;*/
+    margin-left: 10px;
+    margin-top:0px;
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 20px;
+}
+
 
 .img_pci {
     height:185px;    
