@@ -223,7 +223,7 @@ GuiController.prototype.fillActorsImages = function (characters) {
         if (imgname !== null) {
             var url = "http://image.tmdb.org/t/p/w185//" + imgname;
 
-            var imgHtml = "<div class='pci'><img src='" + url + "'></img></div>";
+            var imgHtml = "<div class='pci'><img class='img_pci' src='" + url + "'></img></div>";
 
             var actorname = character.getActor().getName();
             var charactername = character.getName();
