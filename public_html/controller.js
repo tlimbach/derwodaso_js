@@ -10,8 +10,25 @@ $(document).ready(
 //                FilterSelectList("otherMoviesList", "filter");
 //            });
             console.log(window.location.href);
-            var apiKey = window.location.href.substring(window.location.href.length-32,window.location.href.length);
+            var apiKey = window.location.href.substring(window.location.href.length - 32, window.location.href.length);
             console.log("api Key=" + apiKey);
+
+            (function () {
+
+                var $container = $('html'),
+                        height = $container.outerHeight();
+                var wHeight = window.innerHeight;
+
+                var yPos = wHeight / 2 - height / 2;
+
+                console.log("doHeight ?=" + wHeight);
+
+                $container.css({
+                    'marginTop': yPos
+                });
+
+            })();
+
             new GuiController(apiKey).init();
         });
 
