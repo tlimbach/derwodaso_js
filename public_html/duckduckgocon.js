@@ -10,7 +10,7 @@ function DuckDuckGoCon() {
 }
 
 DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
-    
+
     $("#linkWikiMovie").empty();
     $("#linkMovie").empty();
     $("#linkWikiActor").empty();
@@ -21,7 +21,11 @@ DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
 
     var hasWikiUrl = false;
     var hasMovieUrl = false;
-
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         if (typeof (data.AbstractURL) !== "undefined" && data.AbstractURL.length > 0) {
             thatDuckDuckGoCon.handleMovieWikiUrlResult(data);
@@ -35,6 +39,11 @@ DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
 
         if (hasMovieUrl === false || hasWikiUrl === false) {
             url = "https://api.duckduckgo.com/?q=" + movie.getTitle() + "&format=json";
+            $.ajaxSetup({
+                headers: {
+                    'Accept-Language': 'de-DE'
+                }
+            });
             $.getJSON(url, function (data) {
                 if (hasWikiUrl === false && typeof (data.AbstractURL) !== "undefined") {
                     thatDuckDuckGoCon.handleMovieWikiUrlResult(data);
@@ -52,22 +61,25 @@ DuckDuckGoCon.prototype.handleMovieWikiUrlResult = function (data) {
     console.log("search movie urls! " + data);
     var wikiMovieUrl = data.AbstractURL;
 
-    $("#linkWikiMovie").html("<a href='" + wikiMovieUrl + "' title='"+wikiMovieUrl+"' target='_blank'>" + wikiMovieUrl + "</a>");
+    $("#linkWikiMovie").html("<a href='" + wikiMovieUrl + "' title='" + wikiMovieUrl + "' target='_blank'>" + wikiMovieUrl + "</a>");
 }
 
 DuckDuckGoCon.prototype.handleMovieUrlResult = function (data) {
-console.log("hmur");
+    console.log("hmur");
     var movieUrl = data.Results[0].FirstURL;
-    $("#linkMovie").html("<a href='" + movieUrl + "' title='"+movieUrl+"' target='_blank'>" + movieUrl + "</a>");
+    $("#linkMovie").html("<a href='" + movieUrl + "' title='" + movieUrl + "' target='_blank'>" + movieUrl + "</a>");
 }
-
-
 
 DuckDuckGoCon.prototype.searchActorUrl = function (url) {
     console.log("DuckDuckGoCon: query searchActorUrl for name = " + url);
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         console.log("yeahduckduckg22o! " + data);
         var wikiActorUrl = data.AbstractURL;
-        $("#linkWikiActor").html("<a href='" + wikiActorUrl +"' title='"+wikiActorUrl+ "' target='_blank'>" + wikiActorUrl + "</a>");
+        $("#linkWikiActor").html("<a href='" + wikiActorUrl + "' title='" + wikiActorUrl + "' target='_blank'>" + wikiActorUrl + "</a>");
     });
 };

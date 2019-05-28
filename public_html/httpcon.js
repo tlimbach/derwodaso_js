@@ -16,6 +16,11 @@ HttpCon.prototype.init = function () {
 HttpCon.prototype.queryMovies = function (name, callback) {
     console.log("httpCon: query movies for name = " + name);
     var url = this.baseUrl + "movie?api_key=" + this.apiKey + "&query=" + name + "&language=de";
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         console.log("yeah! " + data);
         var results = data.results;
@@ -46,6 +51,11 @@ HttpCon.prototype.showServerError = function (data, textstatus, xhr) {
 HttpCon.prototype.queryActors = function (name, callback) {
     console.log("httpCon: query actors for name = " + name);
     var url = this.baseUrl + "person?api_key=" + this.apiKey + "&query=" + name + "&language=de";
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         console.log("yeah! actors" + data);
         var results = data.results;
@@ -64,6 +74,11 @@ HttpCon.prototype.queryActors = function (name, callback) {
 HttpCon.prototype.queryCharactersForMovie = function (movie, callback) {
     var url = "https://api.themoviedb.org/3/movie/" + movie.getId() + "?api_key=" + this.apiKey + "&append_to_response=credits,videos" + "&language=de";
     console.log("httpCon: query characters for  movie = " + movie.getTitle());
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         console.log("received characters :  " + data);
         var cast = data.credits.cast;
@@ -83,6 +98,11 @@ HttpCon.prototype.queryCharactersForMovie = function (movie, callback) {
 HttpCon.prototype.queryMoviesForActor = function (actor, callback) {
     var url = "https://api.themoviedb.org/3/person/" + actor.getId() + "/movie_credits?api_key=" + this.apiKey + "&language=de";
     console.log("httpCon: query other movies for actor = " + actor.getName());
+    $.ajaxSetup({
+        headers: {
+            'Accept-Language': 'de-DE'
+        }
+    });
     $.getJSON(url, function (data) {
         console.log("received other movies :  " + data);
         var cast = data.cast;
