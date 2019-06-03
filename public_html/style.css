@@ -71,7 +71,7 @@ body {
 #pc {
     grid-area: p;
     padding: 0;
-    /*height:225px;  // Höhen einstellen*/*/
+    /*height:225px;  // Höhen einstellen*/
     background-color: var(main-bg-color);
 }
 
