@@ -71,7 +71,7 @@ body {
 #pc {
     grid-area: p;
     padding: 0;
-    /*height:205px;  // Höhen einstellen*/
+    /*height:225px;  // Höhen einstellen*/*/
     background-color: var(main-bg-color);
 }
 
@@ -79,6 +79,8 @@ body {
     padding-bottom: 0px;   
     height: 98%;
 }
+
+
 
 input, select {
     width: 95%;
@@ -158,7 +160,7 @@ select {
     overflow: scroll;
     overflow-y: auto;
     max-width: 950px;
-    height:235px;
+    height:255px;
 }
 
 .img_pci {
