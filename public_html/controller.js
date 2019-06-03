@@ -15,21 +15,21 @@ $(document).ready(
 
 // vertikal Zentrieren
 
-//            (function () {
-//
-//                var $container = $('html'),
-//                        height = $container.outerHeight();
-//                var wHeight = window.innerHeight;
-//
-//                var yPos = wHeight / 2 - height / 2;
-//
-//                console.log("doHeight ?=" + wHeight);
-//
-//                $container.css({
-//                    'marginTop': yPos
-//                });
-//
-//            })();
+            (function () {
+
+                var $container = $('html'),
+                        height = $container.outerHeight();
+                var wHeight = window.innerHeight;
+
+                var yPos = wHeight / 2 - height / 2;
+
+                console.log("doHeight ?=" + wHeight);
+
+                $container.css({
+                    'marginTop': yPos
+                });
+
+            })();
 
             new GuiController(apiKey).init();
         });

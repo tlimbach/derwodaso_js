@@ -15,7 +15,9 @@ and open the template in the editor.
 html {
     margin: 0;
     padding: 0;
-    background-color: var( main-bg-color);
+    /*background-color: var( main-bg-color);*/
+    background-color:orange;
+    
 }
 
 body {
