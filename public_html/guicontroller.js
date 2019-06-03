@@ -210,6 +210,7 @@ GuiController.prototype.setCharacters = function (characters) {
 
 GuiController.prototype.fillActorsImages = function (characters) {
     $("#pictures").empty();
+    $("#lgAllRoles").html("Alle Darsteller (" + characters.length+   ")"   );
     for (var t = 0; t < characters.length; t++) {
         var character = characters[t];
         $("<option/>").text(character.getName())
@@ -269,7 +270,7 @@ GuiController.prototype.setActorPoster = function (actor) {
 GuiController.prototype.setOtherMoviesForActor = function (actor, movies) {
     console.log("setOtherMoviesForActor " + movies.length);
     console.log("actorname" + actor.getName());
-    $("#lgOtherMovies").html("Filme mit " + actor.getName());
+    $("#lgOtherMovies").html("Filme mit " + actor.getName()  +" (" + movies.length+   ")"   );
     movies.sort(function (m1, m2) {
 
         var title1 = m1.getTitle();
