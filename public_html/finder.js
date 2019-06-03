@@ -17,7 +17,7 @@ Finder.prototype.init = function () {
 
 Finder.prototype.findMovies = function (name) {
     console.log("find movies with name " + name);
-    this.httpCon.queryMovies(name, this.receivedMovieResults);
+    this.httpCon.queryMovies(encodeURI(name), this.receivedMovieResults);
 };
 
 Finder.prototype.receivedMovieResults = function (movies) {
@@ -27,7 +27,7 @@ Finder.prototype.receivedMovieResults = function (movies) {
 
 Finder.prototype.findActors = function(name) {
     console.log("find actors with name " + name);
-    this.httpCon.queryActors(name, this.receivedActorResults);
+    this.httpCon.queryActors(encodeURI(name), this.receivedActorResults);
 };
 
 
