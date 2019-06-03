@@ -100,8 +100,8 @@ select {
 }
 
 #links {
-    height: 135px;
-    max-height: 135px;
+    height: 155px;
+    max-height: 155px;
     max-width: 115px;
     overflow: hidden;
     text-align: left;
