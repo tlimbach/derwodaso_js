@@ -15,8 +15,8 @@ and open the template in the editor.
 
 
 html, body {
-    margin: 0;
-    height: 100%;
+    margin: 0 auto;
+    height:90vh;
 }
 
 
@@ -31,9 +31,9 @@ img {
 }
 
 #ap img, #mp img {
-    max-height: 440px;
-    height: 440px;
-    width: auto;
+    max-height: 40vh;
+    height: 40vh;
+    width:auto;
 }
 
 
@@ -55,6 +55,7 @@ img {
 
 #ml {
     grid-area: ml;
+    width:30vw;
 }
 
 #ml ol {
@@ -64,8 +65,8 @@ img {
 #mp, #sp, #ap, #ml {
     padding-top: 0;
     background-color: var(main-bg-color);
-    margin-bottom:0;
-    max-height:60%;
+    margin-bottom:10px;
+    max-height:60vh;
 }
 
 
@@ -92,7 +93,8 @@ select {
 }
 
 #filter{
-    margin-bottom:10px;
+    margin-top: 10px;
+    margin-bottom:5px;
 }
 
 .pci {
@@ -100,12 +102,12 @@ select {
 }
 
 #links {
-    /*height: 155px;
-    max-height: 155px;
-    max-width: 115px;*/
-    overflow: hidden;
+    height: 15vh;
+
+    overflow: scroll;
     text-align: left;
-    width: auto;
+    width: 15vw;
+    padding-bottom:4px;
 }
 
 
@@ -120,8 +122,8 @@ select {
 .grid-container {
     display: grid;
     grid-template-areas: 
-        'mp mp mp mp mp sp ap ap ap ap ap ap ml ml ml ml'
-        'mp mp mp mp mp sp ap ap ap ap ap ap ml ml ml ml'
+        'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
+        'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
         'p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p';
     grid-gap: 5px;
     background-color: var(main-bg-color);
@@ -138,7 +140,7 @@ select {
     overflow-y:scroll;
     text-align: left;
     margin:0;
-    max-height:400px;
+    height:36vh;
 }
 
 #pictures {
