@@ -55,7 +55,7 @@ img {
 
 #ml {
     grid-area: ml;
-    display:none;
+    // display:none;
 }
 
 #ml ol {
@@ -140,6 +140,7 @@ select {
     overflow-y:scroll;
     text-align: left;
     margin:0;
+    max-height:400px;
 }
 
 #pictures {
