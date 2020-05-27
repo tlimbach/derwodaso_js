@@ -8,31 +8,34 @@ and open the template in the editor.
     Author     : thors
 */
 :root { 
-    main-bg-color: res;
+    main-bg-color: red;
     bg-select: light-gray;
 }
 
-html {
+
+
+html, body {
     margin: 0;
-    padding: 0;
-    /*background-color: var( main-bg-color);*/
-    background-color:orange;
-    
+    height: 100%;
 }
 
-body {
-    max-width: 1000px;
-    min-width: 600px;
-    margin: 0 auto;
-}
+
 
 #mp {
     grid-area: mp;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 #ap img, #mp img {
-    height: 340px;
-}   
+    max-height: 440px;
+    height: 440px;
+    width: auto;
+}
+
 
 #sp {
     grid-area: sp;
@@ -48,16 +51,15 @@ body {
     grid-area: ap;
 }
 
-#actorposter img, #poster img{
-    /*height: 255px;*/
-}
+
 
 #ml {
     grid-area: ml;
+    display:none;
 }
 
 #ml ol {
-    height:319px;
+    /* height:319px;*/
 }
 
 #mp, #sp, #ap, #ml {
@@ -65,22 +67,18 @@ body {
     background-color: var(main-bg-color);
     margin-bottom:0;
     /*max-height:300px;  // Höhen einstellen*/
-    height:370px;
+    max-height:60%;
 }
+
+
 
 #pc {
     grid-area: p;
     padding: 0;
-    /*height:225px;  // Höhen einstellen*/
+
     background-color: var(main-bg-color);
+    overflow:scroll;
 }
-
-#mp fieldset, #sp fieldset, #ap fieldset, #ml fieldset, #pc fieldset {
-    padding-bottom: 0px;   
-    height: 98%;
-}
-
-
 
 input, select {
     width: 95%;
@@ -100,15 +98,16 @@ select {
 }
 
 .pci {
-    max-height:250px;
+    width:10em;
 }
 
 #links {
-    height: 155px;
+    /*height: 155px;
     max-height: 155px;
-    max-width: 115px;
+    max-width: 115px;*/
     overflow: hidden;
     text-align: left;
+    width: auto;
 }
 
 
@@ -119,24 +118,13 @@ select {
     padding-bottom:4px;
 }
 
-#legalDDG {
-    grid-area: dd;
-};
-
-#legalTMDB {
-    grid-area: md;
-};
-
-#legalTMDB, #legalDDG {
-    height: 30px;
-}
 
 .grid-container {
     display: grid;
     grid-template-areas: 
-        'mp mp mp mp mp sp ap ap ap ap ap ap ml ml ml ml' 
-        'p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p' 
-        'dd dd dd dd dd dd dd dd md md md md md md md md';
+        'mp mp mp mp mp sp ap ap ap ap ap ap ml ml ml ml'
+        'mp mp mp mp mp sp ap ap ap ap ap ap ml ml ml ml'
+        'p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p';
     grid-gap: 5px;
     background-color: var(main-bg-color);
     padding: 5px;
@@ -159,12 +147,9 @@ select {
     flex-wrap: nowrap;
     overflow: scroll;
     overflow-y: auto;
-    max-width: 950px;
-    height:255px;
 }
 
 .img_pci {
-    height:185px;    
 }
 
 #pictures>div {
