@@ -3,11 +3,11 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 22.05.2019, 18:21:17
     Author     : thors
 */
-:root { 
+:root {
     main-bg-color: red;
     bg-select: light-gray;
 }
@@ -121,7 +121,7 @@ select {
 
 .grid-container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
         'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
         'p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p';
