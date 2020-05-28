@@ -94,7 +94,7 @@ select {
 
 #filter{
     margin-top: 10px;
-    margin-bottom:5px;
+    margin-bottom:3px;
 }
 
 .pci {
@@ -102,12 +102,12 @@ select {
 }
 
 #links {
-    height: 15vh;
+    height: 14vh;
 
     overflow: scroll;
     text-align: left;
     width: 15vw;
-    padding-bottom:4px;
+    padding-bottom:6px;
 }
 
 
