@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -18,7 +18,7 @@ function GuiController(apiKey) {
 
 GuiController.prototype.init = function () {
 
-    //  Film suchen 
+    //  Film suchen
     $("#lstMovie").keydown(function (event) {
         if (event.keyCode === 13) {
             var name = $("#lstMovie").val();
@@ -43,7 +43,7 @@ GuiController.prototype.init = function () {
 
     }.bind(this));
 
-    //  Schauspieler suchen 
+    //  Schauspieler suchen
     $("#lstActor").keydown(function (event) {
         if (event.keyCode === 13) {
             var name = $("#lstActor").val();
@@ -63,7 +63,7 @@ GuiController.prototype.init = function () {
             // Actor ist vorhanden in aktuellem Movie
             this.updateGuiForSelectedActor(actor);
         } else {
-            // Actor wurde frisch geladen 
+            // Actor wurde frisch geladen
 
             $("#linkMovie").empty();
             $("#linkWikiMovie").empty();
@@ -228,7 +228,7 @@ GuiController.prototype.fillActorsImages = function (characters) {
 
             var actorname = character.getActor().getName();
             var charactername = character.getName();
-            var actDisplayxName = actorname.substring(0, 15);
+            var actDisplayxName = actorname.substring(0, 18);
 
             if (charactername.length === 0) {
                 charactername = "???";
@@ -341,9 +341,9 @@ GuiController.prototype.populateOtherMoviesWithFilter = function (filter) {
 
 GuiController.prototype.loadMovieThings = function (movie) {
     if (typeof (movie) !== "undefined") {
-        
+
         this.oldMovies.push(movie);
-        
+
         this.finder.loadCharacters(movie);
 
         $('#poster').empty();

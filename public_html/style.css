@@ -19,7 +19,9 @@ html, body {
     height:90vh;
 }
 
-
+fieldset{
+  height:95%;
+}
 
 #mp {
     grid-area: mp;
@@ -39,7 +41,7 @@ img {
 
 #sp {
     grid-area: sp;
-    padding-bottom: 2px;
+
 }
 
 #sp #fsMovie, #sp #fsActor, #sp #fsRolle {
@@ -66,7 +68,7 @@ img {
     padding-top: 0;
     background-color: var(main-bg-color);
     margin-bottom:10px;
-    max-height:60vh;
+    /* max-height:55vh; */
 }
 
 
@@ -74,9 +76,10 @@ img {
 #pc {
     grid-area: p;
     padding: 0;
+    margin:0;
 
     background-color: var(main-bg-color);
-    overflow:scroll;
+    overflow-x:scroll;
 }
 
 input, select {
@@ -98,7 +101,7 @@ select {
 }
 
 .pci {
-    width:10em;
+    width:11em;
 }
 
 #links {
@@ -151,6 +154,17 @@ select {
 }
 
 .img_pci {
+  position:relative;
+}
+
+.pcu {
+  margin-top:-35px;
+  height:30px;
+  line-height:30px;
+  background-color:rgba(255, 255, 255, 0.7);
+  font-size:16px;
+  color:black;
+  position:relative;
 }
 
 #pictures>div {

@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -23,15 +23,27 @@ $(document).ready(
 
                 var yPos = wHeight / 2 - height / 2;
 
+
                 console.log("doHeight ?=" + wHeight);
 
                 $container.css({
                     'marginTop': yPos
                 });
 
+
             })();
 
             new GuiController(apiKey).init();
+          //  $('#pc').css('height', '400px');
+
+            // $('#mp').css('background-color', 'yellow');
+            // $('#sp').css('background-color', 'orange');
+            // $('#ap').css('background-color', 'cyan');
+            // $('#ml').css('background-color', 'green');
+            // $('#pc').css('background-color', 'purple');
+
+
+
         });
 
 function FilterSelectList(selectListId, filterId) {
