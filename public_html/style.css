@@ -163,6 +163,13 @@ ol {
 	max-height:40vh;
   }
 
-  
+  #ml {
+	width:21vw;
+  }
+
+  #sp fieldset {
+	background-color:purple;
+	width:1vw;
+}
 
 }
