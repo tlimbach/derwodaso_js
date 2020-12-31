@@ -7,83 +7,65 @@ and open the template in the editor.
     Created on : 22.05.2019, 18:21:17
     Author     : thors
 */
-:root {
-    main-bg-color: red;
-    bg-select: light-gray;
-}
-
-
 
 html, body {
-    margin: 0 auto;
-    height:90vh;
-}
-
-fieldset{
-  height:95%;
+	margin:0;
+	padding:0;
+	min-height:100vh;
 }
 
 #mp {
     grid-area: mp;
+	background-color:red;
 }
 
 img {
     width: 100%;
-    height: auto;
+    //height: auto;
 }
 
 #ap img, #mp img {
-    max-height: 40vh;
-    height: 40vh;
-    width:auto;
 }
 
+#ap, #mp {
+	width:28vw;
+}
 
 #sp {
     grid-area: sp;
+	background-color:blue;
 
-}
-
-#sp #fsMovie, #sp #fsActor, #sp #fsRolle {
-    padding-bottom: 7px;
-    margin-bottom: 3px;
 }
 
 #ap {
     grid-area: ap;
+	background-color:green;
 }
-
-
 
 #ml {
     grid-area: ml;
-    width:30vw;
+	background-color:yellow;
+	ax-height:60vh;
 }
 
 #ml ol {
-    /* height:319px;*/
+
 }
 
 #mp, #sp, #ap, #ml {
-    padding-top: 0;
-    background-color: var(main-bg-color);
-    margin-bottom:10px;
-    /* max-height:55vh; */
+  
 }
 
 
 
 #pc {
-    grid-area: p;
-    padding: 0;
-    margin:0;
-
-    background-color: var(main-bg-color);
-    overflow-x:scroll;
+  	grid-area: p;
+	background-color:cyan;
+	overflow-x:scroll;
 }
 
 input, select {
-    width: 95%;
+
 }
 
 legend {
@@ -96,8 +78,7 @@ select {
 }
 
 #filter{
-    margin-top: 10px;
-    margin-bottom:3px;
+    
 }
 
 .pci {
@@ -105,45 +86,34 @@ select {
 }
 
 #links {
-    height: 14vh;
-
-    overflow: scroll;
-    text-align: left;
-    width: 15vw;
-    padding-bottom:6px;
+   
 }
 
 
 #links a {
     overflow-wrap: break-word;
     display: block;
-    padding-top:3px;
-    padding-bottom:4px;
+   
 }
 
 
 .grid-container {
     display: grid;
     grid-template-areas:
-        'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
-        'mp mp mp mp sp ap ap ap ap ap ml ml ml ml ml ml'
-        'p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p';
+        'mp sp ap ml'
+        'p  p  p  p';
     grid-gap: 5px;
-    background-color: var(main-bg-color);
-    padding: 5px;
+  
+
 }
 
 .grid-container>div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    font-size: 14px;
+   
 }
 
 #otherMoviesList {
-    overflow-y:scroll;
-    text-align: left;
-    margin:0;
-    height:36vh;
+    max-height:60vh;
+	overflow-y:scroll;
 }
 
 #pictures {
