@@ -11,11 +11,12 @@ and open the template in the editor.
 html, body {
 	min-height:100vh;
 	margin: 0 auto;
+	background-color:lightgray;
 }
 
 #mp {
     grid-area: mp;
-	background-color:red;
+	background-color:lightgray;
 }
 
 img {
@@ -32,18 +33,18 @@ img {
 
 #sp {
     grid-area: sp;
-	background-color:blue;
+	background-color:lightgray;
 
 }
 
 #ap {
     grid-area: ap;
-	background-color:green;
+	background-color:lightgray;
 }
 
 #ml {
     grid-area: ml;
-	background-color:yellow;
+	background-lightgray;
 	ax-height:60vh;
 }
 
@@ -59,7 +60,7 @@ img {
 
 #pc {
   	grid-area: p;
-	background-color:cyan;
+	background-color: lightgray;
 	overflow-x:scroll;
 }
 
@@ -101,7 +102,7 @@ select {
     grid-template-areas:
         'mp sp ap ml'
         'p  p  p  p';
-    grid-gap: 5px;
+    grid-gap: 0px;
   
 	padding-top:20px;
 
@@ -156,7 +157,7 @@ ol {
 
 @media screen and (max-height: 800px) {
   body {
-    background-color: black;
+    background-color: lightgray;
   }
 
   #otherMoviesList {
