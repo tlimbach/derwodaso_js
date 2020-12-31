@@ -163,5 +163,8 @@ ol {
 	max-height:40vh;
   }
 
+  #links {
+	max-width:17vw;
+}
   
 }
