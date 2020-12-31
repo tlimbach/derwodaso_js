@@ -170,6 +170,10 @@ ol {
   #sp fieldset {
 	background-color:purple;
 	width:1vw;
+  }
+
+  #sp fieldset #links {
+	background-color:red;
 }
 
 }
