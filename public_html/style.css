@@ -152,3 +152,19 @@ ol {
     list-style-type: none;
     padding:0;
 }
+
+
+@media screen and (max-height: 768px) {
+  body {
+    background-color: olive;
+  }
+
+  #otherMoviesList {
+	max-height:40vh;
+  }
+
+  #ml {
+	width:21vw;
+  }
+
+}
