@@ -154,7 +154,7 @@ ol {
 }
 
 
-@media screen and (max-height: 768px) {
+@media screen and (max-height: 760px) {
   body {
     background-color: olive;
   }
