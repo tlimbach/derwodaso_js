@@ -156,7 +156,7 @@ ol {
 
 @media screen and (max-height: 800px) {
   body {
-    background-color: olive;
+    background-color: black;
   }
 
   #otherMoviesList {
