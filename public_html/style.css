@@ -161,10 +161,18 @@ ol {
 
   #otherMoviesList {
 	max-height:40vh;
+	width:22vw;
   }
 
   #links {
+	display:none;
 	max-width:17vw;
+  }
+
+  
+
+ #sp input {
+	width: 10vw;
 }
   
 }
