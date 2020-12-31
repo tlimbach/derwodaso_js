@@ -8,8 +8,8 @@ and open the template in the editor.
     Author     : thors
 */
 
-html, body {
-	min-height:100vh;
+html {
+	height:100vh;
 	margin: 0 auto;
 	background-color:lightgray;
 }
@@ -161,7 +161,7 @@ ol {
   }
 
   #otherMoviesList {
-	max-height:40vh;
+	max-height:43vh;
 	width:22vw;
   }
 
