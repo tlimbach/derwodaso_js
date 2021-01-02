@@ -225,4 +225,8 @@ ol {
   #ap, #mp {
 	width: 97vw;
   }
+
+  #ap {
+	display:none;
+  }
 }
