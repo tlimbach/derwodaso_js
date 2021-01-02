@@ -181,6 +181,10 @@ ol {
 	width: 95vw;	 
  }
 
+ input {
+	font-size:1.0em;
+  } 
+
 }
 
 @media screen and (max-width: 800px) {
