@@ -114,6 +114,7 @@ select {
     flex-wrap: nowrap;
     overflow-x: scroll;
 	overflow-y:hidden;
+	width:100vw;
 }
 
 .img_pci {
