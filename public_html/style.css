@@ -14,6 +14,10 @@ html {
 	background-color:lightgray;
 }
 
+body {
+	height:100 vh;
+}
+
 #mp {
     grid-area: mp;
 	background-color:lightgray;
@@ -44,8 +48,6 @@ img {
 
 #ml {
     grid-area: ml;
-	background-lightgray;
-	ax-height:60vh;
 }
 
 #ml ol {
@@ -61,7 +63,6 @@ img {
 #pc {
   	grid-area: p;
 	background-color: lightgray;
-	overflow-x:scroll;
 }
 
 input, select {
@@ -82,7 +83,7 @@ select {
 }
 
 .pci {
-    width:11em;
+    width:9em;
 }
 
 #links {
@@ -98,6 +99,7 @@ select {
 
 
 .grid-container {
+	height: 100vh;
     display: grid;
     grid-template-areas:
         'mp sp ap ml'
@@ -120,7 +122,7 @@ select {
 #pictures {
     display: flex;
     flex-wrap: nowrap;
-    /* overflow: scroll; */
+    overflow: scroll;
 }
 
 .img_pci {
@@ -180,5 +182,12 @@ ol {
 	height:94%;
  }
   
+ #pc fieldset {
+	height: 80%;
+ }
+
+ #pictures {
+    width: 95vw;	 
+ }
 
 }
