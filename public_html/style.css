@@ -99,7 +99,7 @@ select {
 
 
 .grid-container {
-	height: 100vh;
+	//height: 100vh;
     display: grid;
     grid-template-areas:
         'mp sp ap ml'
@@ -122,7 +122,8 @@ select {
 #pictures {
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow-x: scroll;
+	overflow-y:hidden;
 }
 
 .img_pci {
@@ -183,11 +184,11 @@ ol {
  }
   
  #pc fieldset {
-	height: 80%;
+	//height: 80%;
  }
 
  #pictures {
-    width: 95vw;	 
- }
+	width: 95vw;	 
+}
 
 }
