@@ -193,6 +193,10 @@ ol {
     background-color:rgba(185, 185, 185, 0.7);
   }
 
+  #fieldsetLinks {
+		display:none;
+	}
+
 }
 
 @media screen and (max-width: 800px) {
