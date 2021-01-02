@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 22.05.2019, 18:21:17
-    Author     : thors
-*/
+
 
 html {
 	height:100vh;
@@ -25,7 +17,6 @@ body {
 
 img {
     width: 100%;
-    //height: auto;
 }
 
 #ap img, #mp img {
@@ -99,7 +90,6 @@ select {
 
 
 .grid-container {
-	//height: 100vh;
     display: grid;
     grid-template-areas:
         'mp sp ap ml'
@@ -158,7 +148,7 @@ ol {
 }
 
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 768px) {
   body {
     background-color: lightgray;
   }
@@ -189,6 +179,50 @@ ol {
 
  #pictures {
 	width: 95vw;	 
+ }
+
 }
 
+@media screen and (max-width: 800px) {
+	body {
+		
+	}
+	
+	.grid-container {
+		display:block;
+	}
+	
+	#pictures {
+		display:inline;
+	}
+	
+	.img_pci {
+		width:82vw;
+	}
+	
+	.pco {
+		margin-top:13px;
+		position:relative;
+		margin-bottom: -20px;
+		display:block;
+		z-index:1;
+		background-color:rgba(255, 255, 255, 0.7);
+		
+	}
+	
+	#fieldsetLinks {
+		display:none;
+	}
+	
+	#sp input {
+	  width: 75vw;
+    }
+
+  #otherMoviesList {
+	width:85vw;
+  }
+
+  #ap, #mp {
+	width: 97vw;
+  }
 }
