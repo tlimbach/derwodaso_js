@@ -19,7 +19,7 @@ $(document).ready(
 
             (function () {
 
-                var $container = $('html'),
+                var $container = $('body'),
                         height = $container.outerHeight();
                 var wHeight = window.innerHeight;
 
@@ -39,7 +39,7 @@ $(document).ready(
                 });
 
 
-            })();
+            });
 
             new GuiController(apiKey).init();
           //  $('#pc').css('height', '400px');
