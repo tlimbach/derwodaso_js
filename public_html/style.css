@@ -147,6 +147,10 @@ ol {
     padding:0;
 }
 
+.pcouter {
+	border: 1px dotted darkgray;
+}
+
 
 @media screen and (max-height: 768px) {
   body {
@@ -184,6 +188,10 @@ ol {
  input {
 	font-size:1.0em;
   } 
+
+  .pco {
+    background-color:rgba(185, 185, 185, 0.7);
+  }
 
 }
 
@@ -237,5 +245,9 @@ ol {
   input {
 	font-size:1.2em;
   } 
+
+.pcouter {
+	border: none;
+}
 
 }
