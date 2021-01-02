@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+var isIPhone = false;
 $(document).ready(
         function () {
 //            $("#filter").keyup(function (event) {
@@ -23,6 +25,12 @@ $(document).ready(
 
                 var yPos = wHeight / 2 - height / 2;
 
+				console.log("width " + $container.innerWidth());
+				
+				if ($container.innerWidth()<800) {
+					isIPhone = true;
+				} 
+			
 
                 console.log("doHeight ?=" + wHeight);
 

@@ -228,7 +228,15 @@ GuiController.prototype.fillActorsImages = function (characters) {
 
             var actorname = character.getActor().getName();
             var charactername = character.getName();
-            var actDisplayxName = actorname.substring(0, 18);
+
+			var maxChars = 18;
+			if (isIPhone) {
+				maxChars = 34;
+			}
+
+            var actDisplayxName = actorname.substring(0, maxChars);
+
+console.log("isIphone?"+ isIPhone);
 
             if (charactername.length === 0) {
                 charactername = "???";
@@ -239,7 +247,13 @@ GuiController.prototype.fillActorsImages = function (characters) {
             }
 
             var html = "<div class='pcouter' onclick='updateGuiForSelectededActornamne(\"" + actorname + "\"); '>";
-            html += "<div class='pco'>" + charactername.substring(0, 15) + "</div>";
+
+			maxChars = 15;
+			if (isIPhone) {
+				maxChars = 34;
+			}
+			
+            html += "<div class='pco'>" + charactername.substring(0, maxChars) + "</div>";
             html += imgHtml;
             html += "<div class='pcu'>" + actDisplayxName + "</div>";
             html += "</div>";
