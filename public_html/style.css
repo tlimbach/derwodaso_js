@@ -230,4 +230,8 @@ ol {
 	display:none;
   }
 
+  input {
+	font-size:1.2em;
+  } 
+
 }
