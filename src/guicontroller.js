@@ -245,7 +245,7 @@ GuiController.prototype.fillActorsImages = function(characters) {
 		var imgname = character.getActor().getProfilePath();
 
 		if (imgname !== null) {
-			var url = "http://image.tmdb.org/t/p/w185//" + imgname;
+			var url = "http://image.tmdb.org/t/p/w500//" + imgname;
 
 			var imgHtml = "<div class='pci'><img class='img_pci' src='" + url + "'></img></div>";
 
@@ -296,7 +296,7 @@ GuiController.prototype.setActorPoster = function(actor) {
 	$("#lgActor").html(actor.getName());
 	var imgname = actor.getProfilePath();
 	if (imgname !== null) {
-		var url = "http://image.tmdb.org/t/p/w300//" + imgname;
+		var url = "http://image.tmdb.org/t/p/w500//" + imgname;
 		var html = "<div><img src='" + url + "'></img></div>";
 
 		$("#actorposter").append(html);
@@ -386,7 +386,7 @@ GuiController.prototype.loadMovieThings = function(movie) {
 		this.finder.loadCharacters(movie);
 
 		$('#poster').empty();
-		var url = "http://image.tmdb.org/t/p/w300//" + movie.getPosterPath();
+		var url = "http://image.tmdb.org/t/p/w500//" + movie.getPosterPath();
 
 		var html = "<div><img src='" + url + "'></img></div>";
 		$('#poster').html(html);
