@@ -259,3 +259,36 @@ ol {
 }
 
 }
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+	.img_pci {
+		width:85vw;
+	    margin-left:4vw;
+	}
+	.pco, .pcu {
+		margin-left: 4vw;
+		width:85vw;
+		font-size:4em;
+	}
+	.pco {
+		margin-bottom:-60px;
+		font-size:3.1em;
+	}
+	
+	#pictures>div {
+		line-height:60px;
+		margin-bottom:40px;
+	}
+	
+	.pcu {
+		margin-top:-100px;
+		height:75px;
+		line-height:78px;
+	}
+	
+}
