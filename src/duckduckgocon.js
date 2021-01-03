@@ -72,6 +72,8 @@ DuckDuckGoCon.prototype.handleMovieUrlResult = function (data) {
 
 DuckDuckGoCon.prototype.searchActorUrl = function (url) {
     console.log("DuckDuckGoCon: query searchActorUrl for name = " + url);
+
+   $("#linkWikiActor").empty();
     $.ajaxSetup({
         headers: {
             'Accept-Language': 'de-DE'
