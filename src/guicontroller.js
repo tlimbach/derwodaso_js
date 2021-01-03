@@ -14,6 +14,7 @@ function GuiController(apiKey) {
 	this.oldMovies = [];
 	thatGuiController = this;
 	this.keepActor = false;
+	this.keepActorName = "";
 }
 
 
@@ -200,7 +201,24 @@ GuiController.prototype.setCharacters = function(characters) {
 		$("#lstCharacter").val(firstCharacter.getName());
 		$("#lstActor").val(firstCharacter.getActor().getName());
 
+		if (this.keepActorName) {
+			console.log("shoule keep actor name" + this.keepActorName);
+
+			for (let i = 0; i < characters.length; i++) {
+				const cr = characters[i];
+				
+			//	console.log("compating " + cr.getActor().getName() + " to " + this.keepActorName);
+				
+				if (cr.getActor().getName() == this.keepActorName) {
+					$("#lstCharacter").val(cr.getName());
+					$("#lstActor").val(cr.getActor().getName());
+				}
+			}
+		}
+
 		if (!this.keepActor) {
+
+
 			this.setActorPoster(firstCharacter.getActor());
 			this.linkFinder.findLinkForActor(firstCharacter.getActor());
 
@@ -208,6 +226,7 @@ GuiController.prototype.setCharacters = function(characters) {
 		}
 
 		this.keepActor = false;
+		this.keepActorName = "";
 	}
 
 };
@@ -350,6 +369,7 @@ GuiController.prototype.populateOtherMoviesWithFilter = function(filter) {
 
 					console.log("movie name >" + movieName + "<");
 					this.keepActor = true;
+					this.keepActorName = $("#lstActor").val();
 					this.finder.findMovies(movieName);
 
 				}.bind(this));
