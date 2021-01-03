@@ -61,13 +61,13 @@ DuckDuckGoCon.prototype.handleMovieWikiUrlResult = function (data) {
     console.log("search movie urls! " + data);
     var wikiMovieUrl = data.AbstractURL;
 
-    $("#linkWikiMovie").html("<a href='" + wikiMovieUrl + "' title='" + wikiMovieUrl + "' target='_blank'>" + wikiMovieUrl + "</a>");
+    $("#linkWikiMovie").html("<a href='" + wikiMovieUrl + "' title='" + wikiMovieUrl + "' target='_blank'>" + "Film bei Wikipedia" + "</a>");
 }
 
 DuckDuckGoCon.prototype.handleMovieUrlResult = function (data) {
     console.log("hmur");
     var movieUrl = data.Results[0].FirstURL;
-    $("#linkMovie").html("<a href='" + movieUrl + "' title='" + movieUrl + "' target='_blank'>" + movieUrl + "</a>");
+    $("#linkMovie").html("<a href='" + movieUrl + "' title='" + movieUrl + "' target='_blank'>" + "URL zu Film" + "</a>");
 }
 
 DuckDuckGoCon.prototype.searchActorUrl = function (url) {
@@ -80,6 +80,6 @@ DuckDuckGoCon.prototype.searchActorUrl = function (url) {
     $.getJSON(url, function (data) {
         console.log("yeahduckduckg22o! " + data);
         var wikiActorUrl = data.AbstractURL;
-        $("#linkWikiActor").html("<a href='" + wikiActorUrl + "' title='" + wikiActorUrl + "' target='_blank'>" + wikiActorUrl + "</a>");
+        $("#linkWikiActor").html("<a href='" + wikiActorUrl + "' title='" + wikiActorUrl + "' target='_blank'>" + "URL Schauspieler" + "</a>");
     });
 };
