@@ -70,6 +70,8 @@ GuiController.prototype.init = function() {
 			$("#linkMovie").empty();
 			$("#linkWikiMovie").empty();
 			$("#linkActor").empty();
+			
+			$("#lgMoviePlakat").html("Filmplakat");
 
 			for (var t = 0; t < this.actors.length; t++) {
 				if (this.actors[t].getName() === name) {
@@ -391,6 +393,8 @@ GuiController.prototype.loadMovieThings = function(movie) {
 		var html = "<div><img src='" + url + "'></img></div>";
 		$('#poster').html(html);
 		$("#lstMovie").val(movie.getTitle());
+		
+		$("#lgMoviePlakat").html("Filmplakat - " + movie.getTitle());
 
 		this.linkFinder.findLinksForMovie(movie);
 	}
