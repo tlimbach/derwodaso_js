@@ -11,7 +11,7 @@ $(document).ready(
 		var apiKey = window.location.href.substring(window.location.href.length - 32, window.location.href.length);
 		console.log("api Key=" + apiKey);
 
-		isIPhone = $('body').innerWidth()<800;
+		isIPhone = $('body').innerWidth()<800 || $('body').innerWidth<$('body').innerHeight;
 
 		new GuiController(apiKey).init();
 
