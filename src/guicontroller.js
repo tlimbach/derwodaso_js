@@ -138,8 +138,8 @@ GuiController.prototype.updateGuiForSelectedActor = function(actor) {
 
 };
 
-GuiController.prototype.updateGuiForSelectededActornamne = function(actorName) {
-	var actor = this.getActorForName(actorName);
+GuiController.prototype.updateGuiForSelectedActorQueryName = function(actorQueryName) {
+	var actor = this.getActorForQueryName(actorQueryName);
 	this.updateGuiForSelectedActor(actor);
 };
 
@@ -271,7 +271,8 @@ GuiController.prototype.fillActorsImages = function(characters) {
 				actorname = "???";
 			}
 
-			var html = "<div class='pcouter' onclick='updateGuiForSelectededActornamne(\"" + actorname + "\"); '>";
+			const actorQueryName = character.getActor().getName().replace(/\W/g, '');
+			var html = "<div class='pcouter' onclick='updateGuiForSelectedActorQueryName(\"" + actorQueryName + "\"); '>";
 
 			maxChars = 15;
 			if (isIPhone) {
@@ -288,9 +289,9 @@ GuiController.prototype.fillActorsImages = function(characters) {
 	}
 };
 
-function updateGuiForSelectededActornamne(name) {
-	console.log("name is " + name);
-	thatGuiController.updateGuiForSelectededActornamne(name);
+function updateGuiForSelectedActorQueryName(queryName) {
+	console.log("queryName is " + queryName);
+	thatGuiController.updateGuiForSelectedActorQueryName(queryName);
 }
 
 GuiController.prototype.setActorPoster = function(actor) {
@@ -419,6 +420,14 @@ GuiController.prototype.getCharacterForName = function(name) {
 GuiController.prototype.getActorForName = function(name) {
 	for (var t = 0; t < this.characters.length; t++) {
 		if (this.characters[t].getActor().getName() === name) {
+			return this.characters[t].getActor();
+		}
+	}
+};
+
+GuiController.prototype.getActorForQueryName = function(queryName) {
+	for (var t = 0; t < this.characters.length; t++) {
+		if (this.characters[t].getActor().getQueryName() === queryName) {
 			return this.characters[t].getActor();
 		}
 	}

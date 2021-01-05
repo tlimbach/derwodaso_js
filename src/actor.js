@@ -9,10 +9,15 @@ function Actor(name, id, profilePath) {
     this.id = id;
     this.name = name;
     this.profilePath = profilePath;
+	this.queryName = name.replace(/\W/g, '');
 }
 
 Actor.prototype.getName = function () {
     return this.name;
+};
+
+Actor.prototype.getQueryName = function () {
+    return this.queryName;
 };
 
 Actor.prototype.getId = function () {
