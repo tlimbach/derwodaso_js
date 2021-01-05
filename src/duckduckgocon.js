@@ -17,7 +17,7 @@ DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
 
     console.log("DuckDuckGoCon: query searchMovieUrl for name = " + url);
 
-    var url = "https://api.duckduckgo.com/?q='" + movie.getTitle() + "' film&format=json";
+    var url = "https://api.duckduckgo.com/?q='" + movie.getTitle().replace(/\W/g, '') + "' film&format=json";
 
     var hasWikiUrl = false;
     var hasMovieUrl = false;

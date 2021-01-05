@@ -17,6 +17,6 @@ LinkFinder.prototype.findLinksForMovie = function(movie) {
 }
 
 LinkFinder.prototype.findLinkForActor = function(actor) {
-    var url = "https://api.duckduckgo.com/?q='" + actor.getName() + "'&format=json";
+    var url = "https://api.duckduckgo.com/?q='" + actor.getQueryName() + "'&format=json";
     this.httpCon.searchActorUrl(url);
 }
