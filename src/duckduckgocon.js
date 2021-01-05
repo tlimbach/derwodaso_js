@@ -17,7 +17,7 @@ DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
 
     console.log("DuckDuckGoCon: query searchMovieUrl for name = " + url);
 
-    var url = "https://api.duckduckgo.com/?q=" + movie.getTitle() + " film&format=json";
+    var url = "https://api.duckduckgo.com/?q='" + movie.getTitle() + "' film&format=json";
 
     var hasWikiUrl = false;
     var hasMovieUrl = false;
@@ -38,7 +38,7 @@ DuckDuckGoCon.prototype.searchMovieUrls = function (movie) {
         }
 
         if (hasMovieUrl === false || hasWikiUrl === false) {
-            url = "https://api.duckduckgo.com/?q=" + movie.getTitle() + "&format=json";
+            url = "https://api.duckduckgo.com/?q='" + movie.getTitle() + "'&format=json";
             $.ajaxSetup({
                 headers: {
                     'Accept-Language': 'de-DE'
